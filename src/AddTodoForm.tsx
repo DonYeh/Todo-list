@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent } from "react";
+import { FormControl, Container, TextField, Button } from "@material-ui/core";
 import { useState } from "react";
 
 interface AddTodoFormProps {
@@ -16,12 +17,33 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
 	};
 
 	return (
-		<form>
-			<input type="text" value={newTodo} onChange={handleChange} />
-			<button type="submit" onClick={handleSubmit}>
-				Add Todo
-			</button>
-		</form>
+		<Container maxWidth="sm" style={{ marginTop: "5vh" }}>
+			<form>
+				<FormControl fullWidth={true}>
+					<TextField
+						type="text"
+						value={newTodo}
+						onChange={handleChange}
+						label="I will ..."
+						required={true}
+					/>
+					<Button
+						variant="contained"
+						color="primary"
+						type="submit"
+						onClick={handleSubmit}
+					>
+						{" "}
+						add{" "}
+					</Button>
+				</FormControl>
+				{/* 
+				<input type="text" value={newTodo} onChange={handleChange} />
+				<button type="submit" onClick={handleSubmit}>
+					Add Todo
+				</button> */}
+			</form>
+		</Container>
 	);
 };
 
