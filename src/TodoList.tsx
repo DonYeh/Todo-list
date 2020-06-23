@@ -24,6 +24,7 @@ export const TodoList: React.FC<TodoListProps> = ({
 						return (
 							<TodoListItem
 								todo={todo}
+								key={todo.id}
 								toggleTodo={toggleTodo}
 								removeTodo={removeTodo}
 							/>

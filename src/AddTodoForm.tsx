@@ -19,7 +19,7 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
 	return (
 		<Container maxWidth="sm" style={{ marginTop: "5vh" }}>
 			<form>
-				<FormControl fullWidth={true}>
+				<FormControl fullWidth={true} focused={true}>
 					<TextField
 						type="text"
 						value={newTodo}
@@ -34,14 +34,9 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
 						onClick={handleSubmit}
 					>
 						{" "}
-						add{" "}
+						+ add{" "}
 					</Button>
 				</FormControl>
-				{/* 
-				<input type="text" value={newTodo} onChange={handleChange} />
-				<button type="submit" onClick={handleSubmit}>
-					Add Todo
-				</button> */}
 			</form>
 		</Container>
 	);

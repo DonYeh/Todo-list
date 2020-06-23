@@ -27,7 +27,15 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
 			<Container maxWidth="sm" style={{ padding: 0 }}>
 				<Card variant="outlined" style={{ marginTop: 35 }}>
 					<CardContent>
-						<Typography variant="h6" component="h2">
+						<Typography
+							variant="h6"
+							component="h2"
+							style={{
+								textDecoration: todo.complete
+									? "line-through"
+									: "none",
+							}}
+						>
 							<IconButton onClick={() => toggleTodo(todo)}>
 								<Check style={{ color: "green" }} />
 							</IconButton>
