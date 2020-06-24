@@ -5,6 +5,7 @@ import {
 	Typography,
 	Container,
 	IconButton,
+	Paper,
 } from "@material-ui/core";
 import { v4 as uuidv4 } from "uuid";
 import { Check, Delete } from "@material-ui/icons";
@@ -25,31 +26,33 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
 		<div>
 			<CssBaseline />
 			<Container maxWidth="sm" style={{ padding: 0 }}>
-				<Card variant="outlined" style={{ marginTop: 35 }}>
-					<CardContent>
-						<Typography
-							variant="h6"
-							component="h2"
-							style={{
-								textDecoration: todo.complete
-									? "line-through"
-									: "none",
-							}}
-						>
-							<IconButton onClick={() => toggleTodo(todo)}>
-								<Check style={{ color: "green" }} />
-							</IconButton>
-							{todo.text}
-							{/* <Typography>{todo.text}</Typography> */}
-							<IconButton
-								style={{ float: "right" }}
-								onClick={() => removeTodo(todo.id)}
+				<Paper>
+					<Card variant="outlined" style={{ marginTop: 35 }}>
+						<CardContent>
+							<Typography
+								variant="h6"
+								component="h2"
+								style={{
+									textDecoration: todo.complete
+										? "line-through"
+										: "none",
+								}}
 							>
-								<Delete style={{ color: "red" }} />
-							</IconButton>
-						</Typography>
-					</CardContent>
-				</Card>
+								<IconButton onClick={() => toggleTodo(todo)}>
+									<Check style={{ color: "green" }} />
+								</IconButton>
+								{todo.text}
+								{/* <Typography>{todo.text}</Typography> */}
+								<IconButton
+									style={{ float: "right" }}
+									onClick={() => removeTodo(todo.id)}
+								>
+									<Delete style={{ color: "red" }} />
+								</IconButton>
+							</Typography>
+						</CardContent>
+					</Card>
+				</Paper>
 			</Container>
 
 			{/* <label
