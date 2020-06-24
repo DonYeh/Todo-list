@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { TodoList } from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import { v4 as uuidv4 } from "uuid";
+import { Grid } from "@material-ui/core";
 
 const initialTodos: Array<Todo> = [
 	{ id: "1", text: "eat", complete: false },
@@ -35,9 +36,9 @@ const App: React.FC = () => {
 			]);
 	};
 
-	const checkTodo: RemoveTodo = (id) => {
-		console.log(id);
-	};
+	// const checkTodo: RemoveTodo = (id) => {
+	// 	console.log(id);
+	// };
 
 	const removeTodo: RemoveTodo = (id) => {
 		const filteredTodos = todos.filter((todo) => todo.id != id);
@@ -45,14 +46,14 @@ const App: React.FC = () => {
 	};
 
 	return (
-		<>
+		<Grid container>
 			<AddTodoForm addTodo={addTodo} />
 			<TodoList
 				todos={todos}
 				toggleTodo={toggleTodo}
 				removeTodo={removeTodo}
 			/>
-		</>
+		</Grid>
 	);
 };
 

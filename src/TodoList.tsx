@@ -1,6 +1,6 @@
 import React from "react";
 import { TodoListItem } from "./TodoListItem";
-import { Container } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -19,18 +19,20 @@ export const TodoList: React.FC<TodoListProps> = ({
 		<>
 			<CssBaseline />
 			<Container maxWidth="sm">
-				<ul style={{ padding: 0 }}>
-					{todos.map((todo) => {
-						return (
-							<TodoListItem
-								todo={todo}
-								key={todo.id}
-								toggleTodo={toggleTodo}
-								removeTodo={removeTodo}
-							/>
-						);
-					})}
-				</ul>
+				<Grid item container>
+					<ul style={{ padding: 0, width: "100%" }}>
+						{todos.map((todo) => {
+							return (
+								<TodoListItem
+									todo={todo}
+									key={todo.id}
+									toggleTodo={toggleTodo}
+									removeTodo={removeTodo}
+								/>
+							);
+						})}
+					</ul>
+				</Grid>
 			</Container>
 		</>
 	);
