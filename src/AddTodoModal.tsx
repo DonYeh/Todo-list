@@ -43,35 +43,56 @@ const AddTodoModal: React.FC<AddTodoModalProps> = ({
 	// };
 	return (
 		<Dialog onClose={handleClose} open={open}>
-			<DialogTitle>Add Todo</DialogTitle>
-			<DialogContent>
-				<TextField
-					type="text"
-					label="I will do..."
-					value={newTodo}
-					onChange={handleChange}
-					variant="outlined"
-					required={true}
-				/>
-			</DialogContent>
-			<DialogActions>
-				<Button
-					variant="contained"
-					color="primary"
-					type="submit"
-					onClick={handleSubmit}
+			<Grid container direction="column" justify="center">
+				<Grid>
+					<DialogTitle style={{ textAlign: "center" }}>
+						Add Todo
+					</DialogTitle>
+				</Grid>
+				<Grid>
+					<DialogContent>
+						<TextField
+							type="text"
+							label="I will do..."
+							value={newTodo}
+							onChange={handleChange}
+							variant="outlined"
+							required={true}
+							autoFocus
+						/>
+					</DialogContent>
+				</Grid>
+				<Grid
+					container
+					justify="space-between"
+					style={{ padding: "1rem 0" }}
 				>
-					+ add
-				</Button>
-				<Button
-					variant="contained"
-					color="primary"
-					type="submit"
-					onClick={closeModal}
-				>
-					x cancel
-				</Button>
-			</DialogActions>
+					<DialogActions style={{ width: "100%" }}>
+						<Grid container justify="space-evenly">
+							<Grid item>
+								<Button
+									variant="contained"
+									color="primary"
+									type="submit"
+									onClick={closeModal}
+								>
+									x
+								</Button>
+							</Grid>
+							<Grid item>
+								<Button
+									variant="contained"
+									color="primary"
+									type="submit"
+									onClick={handleSubmit}
+								>
+									+
+								</Button>
+							</Grid>
+						</Grid>
+					</DialogActions>
+				</Grid>
+			</Grid>
 		</Dialog>
 	);
 };

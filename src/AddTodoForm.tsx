@@ -46,6 +46,7 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({
 					color="primary"
 					type="submit"
 					onClick={handleSubmit}
+					style={{ width: "100%" }}
 				>
 					{" "}
 					+ add{" "}
